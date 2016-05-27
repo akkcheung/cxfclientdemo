@@ -1,0 +1,29 @@
+package uploadDemo;
+
+import javax.activation.DataHandler;
+import lombok.*;
+import javax.xml.bind.annotation.XmlMimeType;
+
+//@Data
+public class Resume{
+	
+	@Getter @Setter
+	private String candidateName;
+	
+	@Getter @Setter
+	private String resumeFileType;
+	
+		
+	//@XmlMimeType("application/octet-stream")
+	private DataHandler docData;        
+	
+	public void setDocData(DataHandler docData) {
+		this.docData = docData;
+	}
+	
+	@XmlMimeType("application/octet-stream")
+	public DataHandler getDocData() {
+		return this.docData;
+	}
+	
+}
